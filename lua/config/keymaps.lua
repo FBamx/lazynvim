@@ -41,7 +41,3 @@ map("n", "<leader>td", ":lua require 'gitsigns'.toggle_deleted()<CR>")
 
 -- tagbar
 map("n", "<A-t>", ":Tagbar<CR>")
-
--- commment
-map("n", "<C-m>", ":lua require('Comment.api').toggle.linewise.current()<CR>")
-map("v", "<C-m>", ":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>")

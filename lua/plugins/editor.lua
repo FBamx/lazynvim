@@ -153,11 +153,6 @@ return {
     end,
   },
 
-  -- comment
-  {
-    "numToStr/Comment.nvim"
-  },
-
   -- toggle term
   {
     "akinsho/toggleterm.nvim",
