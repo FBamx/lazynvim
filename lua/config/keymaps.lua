@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-vim.g.mapleader = " "
+-- vim.g.mapleader = " "
 
 -- unset highlight
 map("n", "<Esc>", ":nohl<CR>")
@@ -14,8 +14,6 @@ map("i", "jj", "<Esc>")
 -- navigate within insert mode
 map("i", "<C-h>", "<Left>")
 map("i", "<C-l>", "<Right>")
-map("i", "<C-j>", "<Down>")
-map("i", "<C-k>", "<Up>")
 
 map("n", "x", '"_x')
 map("n", "=", "<C-a>")
