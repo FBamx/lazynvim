@@ -25,14 +25,6 @@ map("i", "<M-z>", "<ESC>", { silent = true })
 
 map("n", "<leader>nh", ":nohl<CR>", { silent = true })
 
--- dap
-map("n", "<F1>", ":lua require 'dap'.toggle_breakpoint()<CR>")
-map("n", "<F2>", ":lua require 'dap'.continue()<CR>")
-map("n", "<F3>", ":lua require 'dap'.step_over()<CR>")
-map("n", "<F4>", ":lua require 'dap'.step_into()<CR>")
-map("n", "<F5>", ":lua require 'dap'.step_out()<CR>")
-map("n", "<F6>", ":lua require 'dapui'.close()<CR>")
-
 -- git
 map("n", "<leader>rh", ":lua require 'gitsigns'.reset_hunk()<CR>")
 map("n", "<leader>ph", ":lua require 'gitsigns'.preview_hunk()<CR>")
