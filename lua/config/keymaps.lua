@@ -41,3 +41,7 @@ map("n", "<leader>td", ":lua require 'gitsigns'.toggle_deleted()<CR>")
 
 -- tagbar
 map("n", "<A-t>", ":Tagbar<CR>")
+
+-- diagnostic
+map("n", "<A-n>", vim.diagnostic.goto_next)
+map("n", "<A-p>", vim.diagnostic.goto_prev)
