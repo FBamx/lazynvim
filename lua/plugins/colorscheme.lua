@@ -28,7 +28,11 @@ return {
       undercurl = true,
       underline = true,
       bold = true,
-      italic = false,
+      italic = {
+        strings = true,
+        operators = true,
+        comments = true
+      },
       strikethrough = false,
       invert_selection = false,
       invert_signs = false,
