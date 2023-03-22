@@ -13,6 +13,8 @@ return {
     },
   },
 
+  { "folke/noice.nvim", enabled = false },
+
   -- go nvim
   {
     "ray-x/go.nvim",

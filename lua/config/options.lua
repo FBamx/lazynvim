@@ -1,5 +1,10 @@
 local opt = vim.opt -- for conciseness
 
+-- neovide
+if vim.g.neovide then
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+end
+
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true         -- shows absolute line number on cursor line (when relative number is on)
