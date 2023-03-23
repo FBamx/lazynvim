@@ -53,10 +53,17 @@ return {
       transparent_mode = false,
     },
   },
+
+  -- dracula
+  {
+    "Mofiqul/dracula.nvim",
+    name = "dracula",
+  },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "dracula",
     },
   },
 }
