@@ -15,6 +15,14 @@ return {
 
   -- { "folke/noice.nvim", enabled = false },
 
+  -- diffview
+  {
+    "sindrets/diffview.nvim",
+    dependencies = { -- optional packages
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
   -- go nvim
   {
     "ray-x/go.nvim",
@@ -327,6 +335,7 @@ return {
         "regex",
         "vim",
         "yaml",
+        "cpp",
       }
     end,
   },
