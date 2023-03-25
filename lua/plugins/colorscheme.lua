@@ -6,7 +6,7 @@ return {
     opts = {
       flavour = "mocha",
       term_colors = true,
-      -- transparent_background = true,
+      transparent_background = true,
       color_overrides = {
         mocha = {
           base = "#000000",
@@ -60,7 +60,7 @@ return {
     "Mofiqul/dracula.nvim",
     name = "dracula",
     opts = {
-      -- transparent_bg = true,
+      transparent_bg = true,
     },
   },
 
