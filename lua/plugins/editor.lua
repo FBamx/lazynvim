@@ -69,14 +69,11 @@ return {
       for group, color in pairs(hl_groups) do
         vim.api.nvim_set_hl(0, group, color)
       end
-      -- tab for confirm
-      opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-      })
+      vim.api.nvim_set_hl(0, "cursor", { bg = "#aaafff", fg = "White" })
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
         completion = {
-          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:TabLineSel,Search:None",
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:cursor,Search:None",
           side_padding = 0,
         },
         documentation = {
