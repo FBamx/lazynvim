@@ -14,6 +14,12 @@ map("i", "jj", "<Esc>")
 -- navigate within insert mode
 map("i", "<C-h>", "<Left>")
 map("i", "<C-l>", "<Right>")
+map("i", "<C-j>", "<Down>")
+map("i", "<C-k>", "<Up>")
+
+-- move quickly
+map("n", "<S-j>", "5j")
+map("n", "<S-k>", "5k")
 
 map("n", "x", '"_x')
 map("n", "=", "<C-a>")

@@ -23,7 +23,7 @@ return {
     },
   },
 
-  -- add cmp-emoji
+  -- cmp
   {
     "hrsh7th/nvim-cmp",
     dependencies = { "hrsh7th/cmp-emoji" },
@@ -31,12 +31,25 @@ return {
     opts = function(_, opts)
       local cmp = require("cmp")
 
+      vim.api.nvim_set_hl(0, "CursorPemu", { bg = "#aaafff", fg = "White" })
+
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          winhighlight = "Normal:None,FloatBorder:None,CursorLine:CursorPemu,Search:None",
+          -- side_padding = 0,
+        }),
+        documentation = cmp.config.window.bordered({
+          winhighlight = "Normal:None,FloatBorder:None,CursorLine:MyPmenuSel,Search:None",
+          -- side_padding = 0,
+        }),
       }
     end,
+  },
+
+  -- colorizer
+  {
+    "norcalli/nvim-colorizer.lua"
   },
 
   -- go nvim
