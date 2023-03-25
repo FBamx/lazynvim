@@ -31,38 +31,10 @@ return {
     opts = function(_, opts)
       local cmp = require("cmp")
 
-      vim.o.completeopt = "menu,menuone,noselect"
-      local function border(hl_name)
-        return {
-          { "╭", hl_name },
-          { "─", hl_name },
-          { "╮", hl_name },
-          { "│", hl_name },
-          { "╯", hl_name },
-          { "─", hl_name },
-          { "╰", hl_name },
-          { "│", hl_name },
-        }
-      end
-      local cmp_window = require "cmp.utils.window"
-      cmp_window.info_ = cmp_window.info
-      cmp_window.info = function(self)
-        local info = self:info_()
-        info.scrollable = false
-        return info
-      end
-
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
-        completion = {
-          border = border "CmpBorder",
-          winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-          scrollbar = false,
-        },
-        documentation = {
-          border = border "CmpDocBorder",
-          winhighlight = "Normal:CmpDoc",
-        },
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       }
     end,
   },
