@@ -60,7 +60,7 @@ return {
     "Mofiqul/dracula.nvim",
     name = "dracula",
     opts = {
-      transparent_bg = true,
+      -- transparent_bg = true,
     },
   },
 
