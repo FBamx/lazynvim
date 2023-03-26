@@ -36,6 +36,7 @@ return {
       local hl_groups = {
         PmenuSel = { bg = "#282C34", fg = "NONE" },
         Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
+        cursor = { bg = "#aaafff", fg = "White" },
         CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE" },
         CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE" },
         CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE" },
@@ -69,7 +70,6 @@ return {
       for group, color in pairs(hl_groups) do
         vim.api.nvim_set_hl(0, group, color)
       end
-      vim.api.nvim_set_hl(0, "cursor", { bg = "#aaafff", fg = "White" })
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
         completion = {
