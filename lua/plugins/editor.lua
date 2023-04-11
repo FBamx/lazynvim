@@ -28,6 +28,14 @@ return {
     end
   },
 
+  -- symbols-outline
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("symbols-outline").setup()
+    end
+  },
+
   -- diffview (git version >= 2.31)
   {
     "sindrets/diffview.nvim",
@@ -458,13 +466,7 @@ return {
     end,
   },
 
-  -- tagbar
-  -- neet to install ctags: apt install universal-ctags
-  {
-    "preservim/tagbar",
-  },
-
-  -- history
+  -- local history
   -- you need to install python3 and pip3 install pynvim
   -- If you see an error Not and editor command: LocalHistoryToggle you need to run :UpdateRemotePlugins
   {

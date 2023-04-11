@@ -38,7 +38,7 @@ map("n", "<leader>gb", ":lua package.loaded.gitsigns.blame_line()<CR>")
 map("n", "<leader>td", ":lua require 'gitsigns'.toggle_deleted()<CR>")
 
 -- tagbar
-map("n", "<A-t>", ":Tagbar<CR>")
+map("n", "<A-s>", ":SymbolsOutline<CR>")
 
 -- diagnostic
 map("n", "<A-n>", vim.diagnostic.goto_next)
