@@ -51,7 +51,7 @@ return {
       },
       contrast = "soft",
       dim_inactive = false,
-      transparent_mode = false,
+      transparent_mode = true,
     },
   },
 
@@ -60,14 +60,14 @@ return {
     "Mofiqul/dracula.nvim",
     name = "dracula",
     opts = {
-      -- transparent_bg = true,
+      transparent_bg = true,
     },
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dracula",
+      colorscheme = "gruvbox",
     },
   },
 }

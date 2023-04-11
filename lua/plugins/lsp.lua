@@ -25,6 +25,7 @@ return {
       ensure_installed = {
         "clangd",
         "lua-language-server",
+        "pyright",
       },
       ui = {
         icons = {
