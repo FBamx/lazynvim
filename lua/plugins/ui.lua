@@ -6,6 +6,7 @@ return {
       stages = "fade_in_slide_out",
       timeout = 1500,
       render = "compact",
+      background_colour = "#000000",
     },
   },
 
