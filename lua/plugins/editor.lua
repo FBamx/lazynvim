@@ -15,6 +15,19 @@ return {
 
   -- { "folke/noice.nvim", enabled = false },
 
+  -- neo tree
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = function(_, opts)
+      opts.window = {
+        mappings = {
+          ["<space>"] = "none",
+          ["o"] = "open",
+        },
+      }
+    end
+  },
+
   -- diffview
   {
     "sindrets/diffview.nvim",
@@ -36,11 +49,13 @@ return {
       local hl_groups = {
         PmenuSel = { bg = "#282C34", fg = "NONE" },
         Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
-        cursor = { bg = "#aaafff", fg = "White" },
+        CatppCursor = { bg = "#AAAFFF", fg = "White" },
+        GruvboxCursor = { bg = "#D4A959", fg = "White" },
         CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE" },
         CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE" },
         CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE" },
-        CmpItemMenu = { fg = "#C792EA", bold = true },
+        -- CmpItemMenu = { fg = "#C792EA", bold = true },
+        CmpItemMenu = { fg = "#D4BB6C", bold = true },
         CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
         CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
         CmpItemKindEvent = { fg = "#EED8DA", bg = "#B5585F" },
@@ -50,16 +65,21 @@ return {
         CmpItemKindConstant = { fg = "#FFE082", bg = "#D4BB6C" },
         CmpItemKindConstructor = { fg = "#FFE082", bg = "#D4BB6C" },
         CmpItemKindReference = { fg = "#FFE082", bg = "#D4BB6C" },
-        CmpItemKindFunction = { fg = "#EADFF0", bg = "#A377BF" },
-        CmpItemKindStruct = { fg = "#EADFF0", bg = "#A377BF" },
-        CmpItemKindClass = { fg = "#EADFF0", bg = "#A377BF" },
-        CmpItemKindModule = { fg = "#EADFF0", bg = "#A377BF" },
-        CmpItemKindOperator = { fg = "#EADFF0", bg = "#A377BF" },
+        -- CmpItemKindFunction = { fg = "#EADFF0", bg = "#A377BF" },
+        -- CmpItemKindStruct = { fg = "#EADFF0", bg = "#A377BF" },
+        -- CmpItemKindClass = { fg = "#EADFF0", bg = "#A377BF" },
+        -- CmpItemKindModule = { fg = "#EADFF0", bg = "#A377BF" },
+        -- CmpItemKindOperator = { fg = "#EADFF0", bg = "#A377BF" },
+        CmpItemKindFunction = { fg = "#EADFF0", bg = "#AAAFFF" },
+        CmpItemKindStruct = { fg = "#EADFF0", bg = "#AAAFFF" },
+        CmpItemKindClass = { fg = "#EADFF0", bg = "#AAAFFF" },
+        CmpItemKindModule = { fg = "#EADFF0", bg = "#AAAFFF" },
+        CmpItemKindOperator = { fg = "#EADFF0", bg = "#AAAFFF" },
         CmpItemKindVariable = { fg = "#C5CDD9", bg = "#7E8294" },
         CmpItemKindFile = { fg = "#C5CDD9", bg = "#7E8294" },
         CmpItemKindUnit = { fg = "#F5EBD9", bg = "#D4A959" },
         CmpItemKindSnippet = { fg = "#F5EBD9", bg = "#D4A959" },
-        CmpItemKindFolder = { fg = "#F5EBD9", bg = "#D4A959" },
+        CmpItemKindFolder = { fg = "#F5EBD9", bg = "#D4A958" },
         CmpItemKindMethod = { fg = "#DDE5F5", bg = "#6C8ED4" },
         CmpItemKindValue = { fg = "#DDE5F5", bg = "#6C8ED4" },
         CmpItemKindEnumMember = { fg = "#DDE5F5", bg = "#6C8ED4" },
@@ -73,7 +93,7 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
         completion = {
-          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:cursor,Search:None",
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:GruvboxCursor,Search:None",
           side_padding = 0,
         },
         documentation = {
@@ -115,7 +135,10 @@ return {
 
   -- colorizer
   {
-    "norcalli/nvim-colorizer.lua"
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end
   },
 
   -- go nvim
