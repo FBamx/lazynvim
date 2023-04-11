@@ -28,7 +28,7 @@ return {
     end
   },
 
-  -- diffview
+  -- diffview (git version >= 2.31)
   {
     "sindrets/diffview.nvim",
     dependencies = { -- optional packages
