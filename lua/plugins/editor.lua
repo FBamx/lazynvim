@@ -15,6 +15,14 @@ return {
 
   -- { "folke/noice.nvim", enabled = false },
 
+  -- fold
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async"
+    }
+  },
+
   -- neo tree
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -464,6 +472,11 @@ return {
         "cpp",
       }
     end,
+  },
+
+  -- treesitter context
+  {
+    "nvim-treesitter/nvim-treesitter-context"
   },
 
   -- local history
