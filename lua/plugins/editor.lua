@@ -164,6 +164,9 @@ return {
           })[entry.source.name]
           -- add return types for function suggestions.
           local item = entry:get_completion_item()
+          if kind.menu == nil then
+            kind.menu = ""
+          end
           if item.detail then
             kind.menu = "    " .. (strings[2] or "") .. kind.menu .. "✨" .. item.detail
           else
