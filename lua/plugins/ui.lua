@@ -19,11 +19,13 @@ return {
           v = "#6b6bff"
         },
         sections = {
-          left  = { "- ", "-mode", "left_sep_double", " ", "file_name", " ", "branch" },
+          left  = { "- ", "-mode", "left_sep_double", " ", { "StalineFile", "file_name" }, " ", { "Branch", "branch" } },
           mid   = { "lsp" },
           right = { "right_sep_double", "-line_column" }
         }
       })
+      vim.cmd [[hi StalineFile guifg=Pink]]
+      vim.cmd [[hi Branch guifg=#C3E88D]]
     end,
   },
 
