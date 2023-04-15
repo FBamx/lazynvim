@@ -1,4 +1,7 @@
 local opt = vim.opt -- for conciseness
+vim.opt.laststatus=2
+vim.opt.laststatus=2
+vim.opt.laststatus=2
 
 -- neovide
 if vim.g.neovide then

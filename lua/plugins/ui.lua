@@ -1,4 +1,32 @@
 return {
+  { 'nvim-lualine/lualine.nvim', enabled = false },
+  -- staline
+  {
+    "tamton-aquib/staline.nvim",
+    config = function()
+      require("staline").setup({
+        defaults = {
+          true_colors = true,
+          line_column = " [%l/%L] :%c  ",
+          branch_symbol = " ",
+          left_separator = "",
+          right_separator = ""
+        },
+        mode_colors = {
+          n = "#AAAFFF",
+          i = "#C3E88D",
+          c = "#D4A959",
+          v = "#6b6bff"
+        },
+        sections = {
+          left  = { "- ", "-mode", "left_sep_double", " ", "file_name", " ", "branch" },
+          mid   = { "lsp" },
+          right = { "right_sep_double", "-line_column" }
+        }
+      })
+    end,
+  },
+
   -- notify customization
   {
     "rcarriga/nvim-notify",
