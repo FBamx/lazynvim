@@ -5,15 +5,43 @@ return {
     name = "catppuccin",
     opts = {
       flavour = "mocha",
-      term_colors = true,
+      term_colors = false,
       transparent_background = true,
-      color_overrides = {
-        mocha = {
-          base = "#000000",
-          mantle = "#000000",
-          crust = "#000000",
-        },
+      no_italic = false,
+      no_bold = false,
+      styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = { "italic" },
+        functions = { "bold" },
+        strings = {},
+        variables = { "bold", "italic" },
+        numbers = {},
+        booleans = {},
+        types = { "italic", "bold" },
+        operators = {},
       },
+      integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        notify = false,
+        mini = false,
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+      },
+      dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+      },
+      custom_highlights = function(colors)
+        return {
+          ["@keyword"] = { fg = "#fca7ea", style = { "italic" } },
+          ["@property"] = { fg = "#fca7ea", style = { "italic" } },
+          ["@type.builtin"] = { style = { "italic" } },
+        }
+      end
     },
   },
   -- oxocarbon
