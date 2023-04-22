@@ -505,10 +505,6 @@ return {
     end,
   },
 
-  -- treesitter context
-  {
-    "nvim-treesitter/nvim-treesitter-context"
-  },
 
   -- local history
   -- you need to install python3 and pip3 install pynvim
