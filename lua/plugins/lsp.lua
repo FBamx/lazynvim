@@ -26,6 +26,7 @@ return {
         "clangd",
         "lua-language-server",
         "pyright",
+        "stylua",
       },
       ui = {
         icons = {

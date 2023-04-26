@@ -1,6 +1,15 @@
 return {
   { 'nvim-lualine/lualine.nvim', enabled = false },
 
+  {
+    "akinsho/bufferline.nvim",
+    opts = function(_, opts)
+      opts.options.indicator = {
+        style = 'underline'
+      }
+    end
+  },
+
   -- notify customization
   {
     "rcarriga/nvim-notify",

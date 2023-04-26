@@ -13,6 +13,8 @@ return {
     },
   },
 
+  { "Shougo/deoplete.nvim" },
+
   -- { "folke/noice.nvim", enabled = false },
 
   -- fold
@@ -25,7 +27,7 @@ return {
       vim.o.foldcolumn = '1'
       vim.o.foldlevel = 99
       vim.o.foldlevelstart = 99
-      vim.o.foldenable = true
+      vim.o.foldenable = false
 
       vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
       vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
@@ -157,7 +159,7 @@ return {
 
           kind.menu = ({
             buffer = "☄️",
-            nvim_lsp = "👾",
+            nvim_lsp = "☘️ ",
             luasnip = "🌖",
             nvim_lua = "🌙",
             latex_symbols = "📚",
