@@ -3,11 +3,11 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
-      close_if_last_window = true,              -- Close Neo-tree if it is the last window left in the tab
+      close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
       filesystem = {
-        follow_current_file = true,             -- This will find and focus the file in the active buffer every
+        follow_current_file = true, -- This will find and focus the file in the active buffer every
         -- time the current file is changed while the tree is open.
-        group_empty_dirs = false,               -- when true, empty folders will be grouped together
+        group_empty_dirs = false, -- when true, empty folders will be grouped together
         hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
       },
     },
@@ -17,40 +17,44 @@ return {
 
   -- { "folke/noice.nvim", enabled = false },
 
+  {
+    "christoomey/vim-tmux-navigator",
+  },
+
   -- fold
   {
     "kevinhwang91/nvim-ufo",
     dependencies = {
-      "kevinhwang91/promise-async"
+      "kevinhwang91/promise-async",
     },
     config = function()
-      vim.o.foldcolumn = '1'
+      vim.o.foldcolumn = "1"
       vim.o.foldlevel = 99
       vim.o.foldlevelstart = 99
       vim.o.foldenable = false
 
-      vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-      vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
-      vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith)
-      vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+      vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+      vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
+      vim.keymap.set("n", "zm", require("ufo").closeFoldsWith)
+      vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
 
-      require('ufo').setup({
+      require("ufo").setup({
         preview = {
           win_config = {
-            border = { '', '─', '', '', '', '─', '', '' },
-            winhighlight = 'Normal:Folded',
-            winblend = 0
+            border = { "", "─", "", "", "", "─", "", "" },
+            winhighlight = "Normal:Folded",
+            winblend = 0,
           },
           mappings = {
-            scrollU = '<C-u>',
-            scrollD = '<C-d>',
-          }
+            scrollU = "<C-u>",
+            scrollD = "<C-d>",
+          },
         },
         provider_selector = function(bufnr, filetype, buftype)
-          return { 'treesitter', 'indent' }
-        end
+          return { "treesitter", "indent" }
+        end,
       })
-    end
+    end,
   },
 
   -- neo tree
@@ -63,7 +67,7 @@ return {
           ["o"] = "open",
         },
       }
-    end
+    end,
   },
 
   -- symbols-outline
@@ -71,7 +75,7 @@ return {
     "simrat39/symbols-outline.nvim",
     config = function()
       require("symbols-outline").setup()
-    end
+    end,
   },
 
   -- diffview (git version >= 2.31)
@@ -85,9 +89,7 @@ return {
   -- cmp
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji",
-      "onsails/lspkind.nvim",
-    },
+    dependencies = { "hrsh7th/cmp-emoji", "onsails/lspkind.nvim" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require("cmp")
@@ -145,7 +147,7 @@ return {
         documentation = {
           winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
           side_padding = 0,
-        }
+        },
       }
       opts.formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -153,7 +155,7 @@ return {
           local kind = require("lspkind").cmp_format({
             mode = "symbol_text",
             maxwidth = 40,
-            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
           })(entry, vim_item)
           local strings = vim.split(kind.kind, "%s", { trimempty = true })
 
@@ -187,7 +189,7 @@ return {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
-    end
+    end,
   },
 
   -- go nvim
@@ -200,8 +202,8 @@ return {
       require("go").setup()
     end,
     event = { "CmdlineEnter" },
-    ft = { "go", 'gomod' },
-    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
 
   -- dapui
@@ -254,8 +256,8 @@ return {
         },
       },
       floating = {
-        max_height = nil,  -- These can be integers or a float between 0 and 1.
-        max_width = nil,   -- Floats will be treated as percentage of your screen.
+        max_height = nil, -- These can be integers or a float between 0 and 1.
+        max_width = nil, -- Floats will be treated as percentage of your screen.
         border = "single", -- Border style. Can be "single", "double" or "rounded"
         mappings = {
           close = { "q", "<Esc>" },
@@ -265,8 +267,8 @@ return {
       render = {
         max_type_length = nil, -- Can be integer or nil.
         max_value_lines = 100, -- Can be integer or nil.
-      }
-    }
+      },
+    },
   },
 
   -- dap
@@ -281,12 +283,12 @@ return {
     },
     config = function()
       require("dap").adapters.delve = {
-        type = 'server',
-        port = '${port}',
+        type = "server",
+        port = "${port}",
         executable = {
-          command = 'dlv',
-          args = { 'dap', '-l', '127.0.0.1:${port}' },
-        }
+          command = "dlv",
+          args = { "dap", "-l", "127.0.0.1:${port}" },
+        },
       }
 
       -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
@@ -295,14 +297,14 @@ return {
           type = "delve",
           name = "Debug",
           request = "launch",
-          program = "main.go"
+          program = "main.go",
         },
         {
           type = "delve",
           name = "Debug test", -- configuration for debugging test files
           request = "launch",
           mode = "test",
-          program = "${file}"
+          program = "${file}",
         },
         -- works with go.mod packages and sub packages
         {
@@ -310,18 +312,18 @@ return {
           name = "Debug test (go.mod)",
           request = "launch",
           mode = "test",
-          program = "./${relativeFileDirname}"
+          program = "./${relativeFileDirname}",
         },
       }
       -- start/close dapui when debugging session initialized/terminated
       require("dap").listeners.after.event_initialized["dapui_config"] = function()
-        require("dapui").open {}
+        require("dapui").open({})
       end
       require("dap").listeners.before.event_terminated["dapui_config"] = function()
-        require("dapui").close {}
+        require("dapui").close({})
       end
       require("dap").listeners.before.event_exited["dapui_config"] = function()
-        require("dapui").close {}
+        require("dapui").close({})
       end
 
       require("dap").defaults.fallback.terminal_win_cmd = "enew | set filetype=dap-terminal"
@@ -394,7 +396,7 @@ return {
         end,
         desc = "Pause",
       },
-      { "<leader>dr",  "<CMD>Telescope dap configurations<CR>",   desc = "Run" },
+      { "<leader>dr", "<CMD>Telescope dap configurations<CR>", desc = "Run" },
       {
         "<leader>dsb",
         function()
@@ -475,7 +477,7 @@ return {
       open_mapping = [[<a-i>]],
       terminal_mappings = true,
       insert_mappings = true,
-      direction = "float"
+      direction = "float",
     },
   },
 
@@ -507,13 +509,12 @@ return {
     end,
   },
 
-
   -- local history
   -- you need to install python3 and pip3 install pynvim
   -- If you see an error Not and editor command: LocalHistoryToggle you need to run :UpdateRemotePlugins
   {
     "dinhhuy258/vim-local-history",
-    branch = "master"
+    branch = "master",
   },
   -- customize telescope
   {

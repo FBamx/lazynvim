@@ -39,3 +39,9 @@ map("n", "<A-s>", ":SymbolsOutline<CR>")
 -- diagnostic
 map("n", "<A-n>", vim.diagnostic.goto_next)
 map("n", "<A-p>", vim.diagnostic.goto_prev)
+
+-- tmux navigation
+map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
