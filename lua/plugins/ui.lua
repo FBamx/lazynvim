@@ -1,13 +1,25 @@
 return {
-  { 'nvim-lualine/lualine.nvim', enabled = false },
+  { "nvim-lualine/lualine.nvim", enabled = false },
+
+  -- customize file explorer
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+    opts = function()
+      vim.api.nvim_set_hl(0, "NeoTreeCursorLine", { fg = "#D8EEEB", bg = "#58B5A8" })
+    end,
+  },
 
   {
     "akinsho/bufferline.nvim",
     opts = function(_, opts)
       opts.options.indicator = {
-        style = 'underline'
+        style = "underline",
       }
-    end
+    end,
   },
 
   -- notify customization
