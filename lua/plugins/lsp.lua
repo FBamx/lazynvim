@@ -27,6 +27,7 @@ return {
         "lua-language-server",
         "pyright",
         "stylua",
+        "prettier",
       },
       ui = {
         icons = {

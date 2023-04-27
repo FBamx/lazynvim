@@ -41,13 +41,13 @@ return {
           ["@property"] = { fg = "#fca7ea", style = { "italic" } },
           ["@type.builtin"] = { style = { "italic" } },
         }
-      end
+      end,
     },
   },
   -- oxocarbon
   {
     "nyoom-engineering/oxocarbon.nvim",
-    name = "oxocarbon"
+    name = "oxocarbon",
   },
   -- gruvbox
   {
@@ -75,7 +75,7 @@ return {
         GruvboxBlueSign = { bg = "none" },
         GruvboxPurpleSign = { bg = "none" },
         GruvboxAquaSign = { bg = "none" },
-        GruvboxOrangeSign = { bg = "none" }
+        GruvboxOrangeSign = { bg = "none" },
       },
       contrast = "soft",
       dim_inactive = false,
