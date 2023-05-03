@@ -28,6 +28,7 @@ return {
         "pyright",
         "stylua",
         "prettier",
+        "shfmt",
       },
       ui = {
         icons = {

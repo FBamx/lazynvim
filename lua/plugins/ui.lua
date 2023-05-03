@@ -9,7 +9,7 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = function()
-      vim.api.nvim_set_hl(0, "NeoTreeCursorLine", { fg = "#D8EEEB", bg = "#58B5A8" })
+      vim.api.nvim_set_hl(0, "NeoTreeCursorLine", { fg = "#4B4453", bg = "#EABDFF" })
     end,
   },
 
