@@ -97,12 +97,10 @@ return {
       local hl_groups = {
         PmenuSel = { bg = "#282C34", fg = "NONE" },
         Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
-        CatppCursor = { bg = "#AAAFFF", fg = "White" },
-        GruvboxCursor = { bg = "#D4A959", fg = "White" },
+        CatppCursor = { bg = "#EABDFF", fg = "#4B4453" },
         CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE" },
         CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE" },
         CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE" },
-        -- CmpItemMenu = { fg = "#C792EA", bold = true },
         CmpItemMenu = { fg = "#D4BB6C", bold = true },
         CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
         CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
@@ -113,11 +111,6 @@ return {
         CmpItemKindConstant = { fg = "#FFE082", bg = "#D4BB6C" },
         CmpItemKindConstructor = { fg = "#FFE082", bg = "#D4BB6C" },
         CmpItemKindReference = { fg = "#FFE082", bg = "#D4BB6C" },
-        -- CmpItemKindFunction = { fg = "#EADFF0", bg = "#A377BF" },
-        -- CmpItemKindStruct = { fg = "#EADFF0", bg = "#A377BF" },
-        -- CmpItemKindClass = { fg = "#EADFF0", bg = "#A377BF" },
-        -- CmpItemKindModule = { fg = "#EADFF0", bg = "#A377BF" },
-        -- CmpItemKindOperator = { fg = "#EADFF0", bg = "#A377BF" },
         CmpItemKindFunction = { fg = "#EADFF0", bg = "#AAAFFF" },
         CmpItemKindStruct = { fg = "#EADFF0", bg = "#AAAFFF" },
         CmpItemKindClass = { fg = "#EADFF0", bg = "#AAAFFF" },
@@ -141,7 +134,7 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.window = {
         completion = {
-          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:GruvboxCursor,Search:None",
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:CatppCursor,Search:None",
           side_padding = 0,
         },
         documentation = {
