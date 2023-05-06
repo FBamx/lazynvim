@@ -33,8 +33,8 @@ map("n", "<leader>ph", ":lua require 'gitsigns'.preview_hunk()<CR>")
 map("n", "<leader>gb", ":lua package.loaded.gitsigns.blame_line()<CR>")
 map("n", "<leader>td", ":lua require 'gitsigns'.toggle_deleted()<CR>")
 
--- tagbar
-map("n", "<A-s>", ":SymbolsOutline<CR>")
+-- SymbolsOutline
+map("n", "<leader>cs", ":SymbolsOutline<CR>")
 
 -- diagnostic
 map("n", "<A-n>", vim.diagnostic.goto_next)
