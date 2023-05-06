@@ -88,10 +88,10 @@ return {
       opts.section.buttons.val = {
         -- dashboard.button("p", " " .. "Open project", ":Telescope project display_type=full <CR>"),
         dashboard.button("e", " " .. "New file", ":ene <BAR> startinsert <CR>"),
-        dashboard.button("f", " " .. "Find file", ":cd $HOME/Projects | Telescope find_files <CR>"),
+        dashboard.button("f", " " .. "Find file", ":cd $HOME/ | Telescope find_files <CR>"),
         dashboard.button("r", " " .. "Recent files", ":Telescope oldfiles <CR>"),
         dashboard.button("s", "勒" .. "Restore Session", [[:lua require("persistence").load() <CR>]]),
-        dashboard.button("c", " " .. "Config", ":e $MYVIMRC <CR>"),
+        dashboard.button("c", " " .. "Config", ":e $NVIMRC <CR>"),
         dashboard.button("l", "鈴" .. "Lazy", ":Lazy <CR>"),
         dashboard.button("p", " " .. "Project", ":Telescope project <CR>"),
         dashboard.button("m", " " .. "Mason", ":Mason <CR>"),
