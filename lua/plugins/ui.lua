@@ -93,7 +93,7 @@ return {
         dashboard.button("s", "勒" .. "Restore Session", [[:lua require("persistence").load() <CR>]]),
         dashboard.button("c", " " .. "Config", ":e $MYVIMRC <CR>"),
         dashboard.button("l", "鈴" .. "Lazy", ":Lazy <CR>"),
-        dashboard.button("m", " " .. "Mason", ":Mason <CR>"),
+        dashboard.button("p", " " .. "Project", ":Telescope project <CR>"),
         dashboard.button("q", " " .. "Quit", ":qa <CR>"),
       }
       opts.config.opts.setup = function()

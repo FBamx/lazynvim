@@ -565,7 +565,7 @@ return {
       extensions = {
         project = {
           base_dirs = {
-            "~/Projects",
+            "~/workspace/",
           },
         },
         undo = {
