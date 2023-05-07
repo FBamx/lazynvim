@@ -9,6 +9,7 @@ return {
       { "AckslD/nvim-neoclip.lua" },
       { "xiyaowong/telescope-emoji.nvim" },
       { "LinArcX/telescope-env.nvim" },
+      { "LinArcX/telescope-ports.nvim" },
     },
     opts = {
       defaults = {
@@ -79,6 +80,7 @@ return {
       { "<leader>fy", "<Cmd>Telescope neoclip<CR>", desc = "neoclip" },
       { "<leader>mo", "<Cmd>Telescope emoji<CR>", desc = "emoji" },
       { "<leader>nv", "<Cmd>Telescope env<CR>", desc = "env" },
+      { "<leader>po", "<Cmd>Telescope ports<CR>", desc = "ports" },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -91,6 +93,7 @@ return {
       telescope.load_extension("neoclip")
       telescope.load_extension("emoji")
       telescope.load_extension("env")
+      telescope.load_extension("ports")
     end,
   },
 }
