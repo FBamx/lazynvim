@@ -7,6 +7,8 @@ return {
       { "nvim-telescope/telescope-project.nvim" },
       { "debugloop/telescope-undo.nvim" },
       { "AckslD/nvim-neoclip.lua" },
+      { "xiyaowong/telescope-emoji.nvim" },
+      { "LinArcX/telescope-env.nvim" },
     },
     opts = {
       defaults = {
@@ -75,6 +77,8 @@ return {
         desc = "Find project",
       },
       { "<leader>fy", "<Cmd>Telescope neoclip<CR>", desc = "neoclip" },
+      { "<leader>mo", "<Cmd>Telescope emoji<CR>", desc = "emoji" },
+      { "<leader>nv", "<Cmd>Telescope env<CR>", desc = "env" },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -85,6 +89,8 @@ return {
       telescope.load_extension("project")
       telescope.load_extension("undo")
       telescope.load_extension("neoclip")
+      telescope.load_extension("emoji")
+      telescope.load_extension("env")
     end,
   },
 }
